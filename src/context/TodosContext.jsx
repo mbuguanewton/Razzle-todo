@@ -15,7 +15,7 @@ function TodoProvider({ children }) {
         try {
             setLoading(true)
 
-            if (!todo) {
+            if (!todo.title) {
                 setError('Todo item is required')
                 setTimeout(() => {
                     setError(null)

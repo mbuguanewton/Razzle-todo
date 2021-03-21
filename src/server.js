@@ -32,7 +32,7 @@ const jsScriptTagsFromAssets = (assets, entrypoint, extra = '') => {
 }
 
 mongoose.connect(
-    process.env.MONGO_URI,
+    'mongodb://localhost:27017/razzle',
     {
         useNewUrlParser: true,
         useUnifiedTopology: true,
