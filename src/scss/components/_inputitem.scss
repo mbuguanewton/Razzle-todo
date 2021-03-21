@@ -1,0 +1,20 @@
+@import '../base/base.scss';
+
+form {
+    background: lighten($matte, 3%);
+    width: 100%;
+
+    .formgroup {
+        &__control {
+            background: lighten($matte, 10%);
+            height: 3rem;
+        }
+    }
+
+    .btn {
+        background: $accent;
+        width: 100%;
+        color: $matte;
+        margin: 1rem 0;
+    }
+}

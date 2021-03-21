@@ -1,0 +1,41 @@
+@import './keyframes';
+
+// flex
+@mixin flex($direction: row, $justify: flex-start, $align: flex-start) {
+    display: flex;
+    flex-direction: $direction;
+    align-items: $align;
+    justify-content: $justify;
+}
+
+@mixin grid($num: 1, $gap: 1rem) {
+    display: grid;
+    grid-template-columns: repeat($num, 1fr);
+    gap: $gap;
+}
+
+@mixin skeleton($height: 100px, $width: 30%, $radius: 10px, $color: #eee) {
+    height: $height;
+    width: $width;
+    background: $color;
+    border-radius: $radius;
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+        content: '';
+        display: block;
+        position: absolute;
+        left: -150px;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        background: linear-gradient(
+            to right,
+            transparent 0%,
+            darken($color, 15%) 50%,
+            transparent 100%
+        );
+        animation: load 1s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+    }
+}

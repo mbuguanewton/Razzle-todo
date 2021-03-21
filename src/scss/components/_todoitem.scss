@@ -1,0 +1,44 @@
+@import '../base/base.scss';
+
+.todoitem {
+    width: 100%;
+    padding: 10px;
+    border-radius: $radius-md;
+    height: 3rem;
+    // background: $accent;
+
+    &__wrapper {
+        width: 100%;
+        height: inherit;
+        @include flex(row, space-between, center);
+
+        h3 {
+            cursor: pointer;
+            width: 70%;
+        }
+
+        span {
+            width: 10%;
+            @include flex(row, center, center);
+            height: 100%;
+        }
+
+        &--header {
+            @include skeleton(
+                $height: 2rem,
+                $width: 70%,
+                $radius: $radius-md,
+                $color: #333
+            );
+        }
+
+        &--action {
+            @include skeleton(
+                $height: 2rem,
+                $width: 2rem,
+                $radius: $radius-md,
+                $color: #333
+            );
+        }
+    }
+}
